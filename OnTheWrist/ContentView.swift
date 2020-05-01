@@ -99,14 +99,14 @@ class WristCheck: ObservableObject {
                             let new = (worn:existingHour.worn + (exists ? 1 : 0), total: existingHour.total + 1)
                             hours[hourKey] = new
                         } else {
-                            hours[hourKey] = (worn:1, total:1)
+                            hours[hourKey] = (worn:exists ? 1 : 0, total:1)
                         }
                         
                         if let existingDay = days[dayKey] {
                             let new = (worn:existingDay.worn + (exists ? 1 : 0), total: existingDay.total + 1)
                             days[dayKey] = new
                         } else {
-                            days[dayKey] = (worn:1, total:1)
+                            days[dayKey] = (worn:exists ? 1 : 0, total:1)
                         }
                         
                     }
